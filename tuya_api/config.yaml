@@ -1,0 +1,34 @@
+name: Tuya API Add-on
+version: "1.0.0"
+slug: tuya_api
+description: Fetches device logs from Tuya API and exposes them to Home Assistant
+url: "https://github.com/yourusername/hassio-tuya-api"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: application
+boot: auto
+ports:
+  8000/tcp: 8000
+options:
+  tuya_csrf_token: ""
+  tuya_cookies: ""
+  tuya_project_code: ""
+  tuya_source_id: ""
+  tuya_device_id: ""
+  tuya_region: "EU"
+  poll_interval: 300
+schema:
+  tuya_csrf_token: str
+  tuya_cookies: str
+  tuya_project_code: str
+  tuya_source_id: str
+  tuya_device_id: str
+  tuya_region: str
+  poll_interval: int
+map:
+  - share:rw
+  - config:rw
